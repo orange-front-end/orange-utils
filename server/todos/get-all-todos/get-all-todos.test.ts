@@ -1,5 +1,5 @@
 import { expect, test } from "bun:test"
-import { getAllTodos } from "../get-all-todos"
+import { getAllTodos } from "./get-all-todos"
 import type { TodoModel } from "../interface"
 test("should model is empty, should return an empty array", async () => {
   const model: TodoModel = {
@@ -11,7 +11,7 @@ test("should model is empty, should return an empty array", async () => {
   expect(getAllTodos({model})).toEqual([])
 })
 
-test("should model is not empty, should return correct results", async () => {
+test("should give all results when there are no page-index and page-size", async () => {
   const model: TodoModel = {
     getAllTodos: () => {
       return [
@@ -19,16 +19,38 @@ test("should model is not empty, should return correct results", async () => {
           id: 1,
           content: "todo 1",
           completed: false
+        },
+        {
+          id: 2,
+          content: "todo 2",
+          completed: true
+        },
+        {
+          id: 3,
+          content: "todo 3",
+          completed: false
         }
       ]
     }
   }
 
-  expect(getAllTodos({model})).toEqual([{
-    id: 1,
-    content: "todo 1",
-    completed: false
-  }])
+  expect(getAllTodos({model})).toEqual([
+    {
+      id: 1,
+      content: "todo 1",
+      completed: false
+    },
+    {
+      id: 2,
+      content: "todo 2",
+      completed: true
+    },
+    {
+      id: 3,
+      content: "todo 3",
+      completed: false
+    }
+  ])
 })
 
 test("should give the first page", async () => {

@@ -3,3 +3,6 @@ dev:
 
 test:
 	bun test
+
+coverage:
+	bun test --coverage

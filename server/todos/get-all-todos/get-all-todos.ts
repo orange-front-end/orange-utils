@@ -1,5 +1,5 @@
-import type { TodoModel } from "./interface"
-import type { Todo } from "./type"
+import type { TodoModel } from "../interface"
+import type { Todo } from "../type"
 
 export function getAllTodos({
   model,

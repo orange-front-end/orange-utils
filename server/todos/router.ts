@@ -1,5 +1,5 @@
 import { Hono } from "hono"
-import { getAllTodos } from "./get-all-todos"
+import { getAllTodos } from "./get-all-todos/get-all-todos"
 import type { TodoModel } from "./interface"
 
 export const todos = new Hono()
