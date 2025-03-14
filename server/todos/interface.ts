@@ -1,4 +1,4 @@
-import type { Todo } from "./type";
+import type { CreateTodoBody, Todo } from "./type";
 
 export interface TodoModel {
   getAllTodos: ({
@@ -7,5 +7,7 @@ export interface TodoModel {
   }: {
     pageIndex?: number,
     pageSize?: number,
-  }) => Todo[]
+  }) => Todo[],
+
+  createTodo: (todo: CreateTodoBody) => Todo,
 }

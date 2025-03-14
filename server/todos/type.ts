@@ -3,3 +3,5 @@ export type Todo = {
   content: string
   completed: boolean
 }
+
+export type CreateTodoBody = Omit<Todo, "id"|"completed">
