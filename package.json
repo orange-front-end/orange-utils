@@ -1,6 +1,6 @@
 {
   "name": "orange-utils",
-  "module": "index.ts",
+  "module": "server/index.ts",
   "type": "module",
   "private": true,
   "devDependencies": {
@@ -10,7 +10,7 @@
     "typescript": "^5"
   },
   "scripts": {
-    "dev": "bun --watch index.ts"
+    "dev": "bun --watch server/index.ts"
   },
   "dependencies": {
     "hono": "^4.7.4"
